@@ -43,24 +43,22 @@ const Index = () => {
                 <FormLabel color="white">Prospect Email</FormLabel>
                 <Input type="email" value={prospectEmail} onChange={(e) => setProspectEmail(e.target.value)} bg="gray.700" color="white" _hover={{ bg: "gray.600" }} _focus={{ bg: "gray.600", boxShadow: "outline" }} borderColor="gray.600" borderRadius="md" />
               </FormControl>
-              <FormControl id="productInfoFile">
-                <FormLabel color="white">Product/Event Info File</FormLabel>
-                <Input type="file" onChange={(e) => setProductInfoFile(e.target.files[0]?.name)} bg="gray.700" color="white" _hover={{ bg: "gray.600" }} _focus={{ bg: "gray.600", boxShadow: "outline" }} />
-                {productInfoFile && (
-                  <Text color="white" mt={1}>
-                    {productInfoFile}
-                  </Text>
-                )}
-              </FormControl>
-              <FormControl id="salesConversationsFile">
-                <FormLabel color="white">Previous Sales Conversations PDF</FormLabel>
-                <Input type="file" onChange={(e) => setSalesConversationsFile(e.target.files[0]?.name)} bg="gray.700" color="white" _hover={{ bg: "gray.600" }} _focus={{ bg: "gray.600", boxShadow: "outline" }} />
-                {salesConversationsFile && (
-                  <Text color="white" mt={1}>
-                    {salesConversationsFile}
-                  </Text>
-                )}
-              </FormControl>
+              <Box>
+                <Text color="white" fontWeight="bold" mb={1}>
+                  Product/Event Info File
+                </Text>
+                <Text color="gray.400" bg="gray.800" p={2} borderRadius="md">
+                  {productInfoFile}
+                </Text>
+              </Box>
+              <Box>
+                <Text color="white" fontWeight="bold" mb={1}>
+                  Previous Sales Conversations PDF
+                </Text>
+                <Text color="gray.400" bg="gray.800" p={2} borderRadius="md">
+                  {salesConversationsFile}
+                </Text>
+              </Box>
               <Button type="submit" colorScheme="teal" size="lg" isLoading={isLoading} loadingText="Researching" _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}>
                 Submit
               </Button>

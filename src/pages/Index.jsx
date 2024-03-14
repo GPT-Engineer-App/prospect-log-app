@@ -31,9 +31,9 @@ const Index = () => {
   };
 
   return (
-    <Box bg="linear-gradient(135deg, #1a202c, #2d3748)" minH="100vh" p={8}>
+    <Box bg="linear-gradient(135deg, #1a1a2e, #3d1e6d)" minH="100vh" p={8}>
       <HStack spacing={10} justifyContent="center" alignItems="start">
-        <Box flex={1} p={8} bg="gray.700" borderRadius="lg" boxShadow="xl">
+        <Box flex={1} p={8} bg="purple.900" borderRadius="lg" boxShadow="xl">
           <Text fontSize="3xl" fontWeight="bold" color="white" mb={6}>
             Prospect Research
           </Text>
@@ -41,13 +41,13 @@ const Index = () => {
             <VStack spacing={4} alignItems="stretch">
               <FormControl id="prospectEmail">
                 <FormLabel color="white">Prospect Email</FormLabel>
-                <Input type="email" value={prospectEmail} onChange={(e) => setProspectEmail(e.target.value)} bg="gray.700" color="white" _hover={{ bg: "gray.600" }} _focus={{ bg: "gray.600", boxShadow: "outline" }} borderColor="gray.600" borderRadius="md" />
+                <Input type="email" value={prospectEmail} onChange={(e) => setProspectEmail(e.target.value)} bg="purple.800" color="white" _hover={{ bg: "purple.700" }} _focus={{ bg: "purple.700", boxShadow: "outline" }} borderColor="purple.700" borderRadius="md" />
               </FormControl>
               <Box>
                 <Text color="white" fontWeight="bold" mb={1}>
                   Product/Event Info File
                 </Text>
-                <Text color="gray.400" bg="gray.800" p={2} borderRadius="md">
+                <Text color="purple.300" bg="purple.800" p={2} borderRadius="md">
                   {productInfoFile}
                 </Text>
               </Box>
@@ -55,24 +55,24 @@ const Index = () => {
                 <Text color="white" fontWeight="bold" mb={1}>
                   Previous Sales Conversations PDF
                 </Text>
-                <Text color="gray.400" bg="gray.800" p={2} borderRadius="md">
+                <Text color="purple.300" bg="purple.800" p={2} borderRadius="md">
                   {salesConversationsFile}
                 </Text>
               </Box>
-              <Button type="submit" colorScheme="teal" size="lg" isLoading={isLoading} loadingText="Researching" _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}>
+              <Button type="submit" colorScheme="purple" size="lg" isLoading={isLoading} loadingText="Researching" _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}>
                 Submit
               </Button>
             </VStack>
           </form>
         </Box>
-        <Box flex={1} p={8} bg="gray.700" borderRadius="lg" boxShadow="xl" ml={10}>
+        <Box flex={1} p={8} bg="purple.900" borderRadius="lg" boxShadow="xl" ml={10}>
           <Text fontSize="3xl" fontWeight="bold" color="white" mb={6}>
             Research Logs
           </Text>
           <VStack spacing={2} alignItems="stretch">
             {logs.map((log, index) => (
               <HStack key={index} spacing={2} alignItems="center">
-                {isLoading && index === logs.length - 1 ? <Spinner size="sm" color="blue.500" /> : <Box w={4} h={4} borderRadius="full" bg="blue.500" flexShrink={0} />}
+                {isLoading && index === logs.length - 1 ? <Spinner size="sm" color="purple.500" /> : <Box w={4} h={4} borderRadius="full" bg="purple.500" flexShrink={0} />}
                 <Text color="white">{log}</Text>
               </HStack>
             ))}

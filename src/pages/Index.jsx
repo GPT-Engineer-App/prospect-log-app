@@ -31,21 +31,21 @@ const Index = () => {
   };
 
   return (
-    <Box bg="gray.900" minH="100vh" p={8}>
-      <HStack spacing={8} alignItems="start">
-        <Box flex={1}>
-          <Text fontSize="2xl" fontWeight="bold" color="white" mb={4}>
+    <Box bg="linear-gradient(135deg, #1a202c, #2d3748)" minH="100vh" p={8}>
+      <HStack spacing={10} justifyContent="center" alignItems="start">
+        <Box flex={1} p={8} bg="gray.700" borderRadius="lg" boxShadow="xl">
+          <Text fontSize="3xl" fontWeight="bold" color="white" mb={6}>
             Prospect Research
           </Text>
           <form onSubmit={handleSubmit}>
             <VStack spacing={4} alignItems="stretch">
               <FormControl id="prospectEmail">
                 <FormLabel color="white">Prospect Email</FormLabel>
-                <Input type="email" value={prospectEmail} onChange={(e) => setProspectEmail(e.target.value)} bg="gray.800" color="white" _hover={{ bg: "gray.700" }} _focus={{ bg: "gray.700", boxShadow: "outline" }} />
+                <Input type="email" value={prospectEmail} onChange={(e) => setProspectEmail(e.target.value)} bg="gray.700" color="white" _hover={{ bg: "gray.600" }} _focus={{ bg: "gray.600", boxShadow: "outline" }} borderColor="gray.600" borderRadius="md" />
               </FormControl>
               <FormControl id="productInfoFile">
                 <FormLabel color="white">Product/Event Info File</FormLabel>
-                <Input type="file" onChange={(e) => setProductInfoFile(e.target.files[0]?.name)} bg="gray.800" color="white" _hover={{ bg: "gray.700" }} _focus={{ bg: "gray.700", boxShadow: "outline" }} />
+                <Input type="file" onChange={(e) => setProductInfoFile(e.target.files[0]?.name)} bg="gray.700" color="white" _hover={{ bg: "gray.600" }} _focus={{ bg: "gray.600", boxShadow: "outline" }} />
                 {productInfoFile && (
                   <Text color="white" mt={1}>
                     {productInfoFile}
@@ -54,21 +54,21 @@ const Index = () => {
               </FormControl>
               <FormControl id="salesConversationsFile">
                 <FormLabel color="white">Previous Sales Conversations PDF</FormLabel>
-                <Input type="file" onChange={(e) => setSalesConversationsFile(e.target.files[0]?.name)} bg="gray.800" color="white" _hover={{ bg: "gray.700" }} _focus={{ bg: "gray.700", boxShadow: "outline" }} />
+                <Input type="file" onChange={(e) => setSalesConversationsFile(e.target.files[0]?.name)} bg="gray.700" color="white" _hover={{ bg: "gray.600" }} _focus={{ bg: "gray.600", boxShadow: "outline" }} />
                 {salesConversationsFile && (
                   <Text color="white" mt={1}>
                     {salesConversationsFile}
                   </Text>
                 )}
               </FormControl>
-              <Button type="submit" colorScheme="blue" isLoading={isLoading} loadingText="Researching">
+              <Button type="submit" colorScheme="teal" size="lg" isLoading={isLoading} loadingText="Researching" _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}>
                 Submit
               </Button>
             </VStack>
           </form>
         </Box>
-        <Box flex={1}>
-          <Text fontSize="2xl" fontWeight="bold" color="white" mb={4}>
+        <Box flex={1} p={8} bg="gray.700" borderRadius="lg" boxShadow="xl" ml={10}>
+          <Text fontSize="3xl" fontWeight="bold" color="white" mb={6}>
             Research Logs
           </Text>
           <VStack spacing={2} alignItems="stretch">

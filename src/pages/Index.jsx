@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Box, VStack, HStack, FormControl, FormLabel, Input, Button, Text, Spinner, useToast } from "@chakra-ui/react";
 
 const Index = () => {
-  const [prospectName, setProspectName] = useState("");
   const [prospectEmail, setProspectEmail] = useState("");
   const [logs, setLogs] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -10,14 +9,13 @@ const Index = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (prospectName && prospectEmail) {
+    if (prospectEmail) {
       setIsLoading(true);
-      setLogs([...logs, `Researching about ${prospectName}...`]);
-      // Simulating an async operation
+      setLogs([...logs, `Researching prospect...`]);
+
       setTimeout(() => {
         setIsLoading(false);
-        setLogs([...logs, `Research completed for ${prospectName}.`]);
-        setProspectName("");
+        setLogs([...logs, `Research completed for prospect.`]);
         setProspectEmail("");
         toast({
           title: "Success",
@@ -39,10 +37,6 @@ const Index = () => {
           </Text>
           <form onSubmit={handleSubmit}>
             <VStack spacing={4} alignItems="stretch">
-              <FormControl id="prospectName">
-                <FormLabel color="white">Prospect Name</FormLabel>
-                <Input type="text" value={prospectName} onChange={(e) => setProspectName(e.target.value)} bg="gray.800" color="white" _hover={{ bg: "gray.700" }} _focus={{ bg: "gray.700", boxShadow: "outline" }} />
-              </FormControl>
               <FormControl id="prospectEmail">
                 <FormLabel color="white">Prospect Email</FormLabel>
                 <Input type="email" value={prospectEmail} onChange={(e) => setProspectEmail(e.target.value)} bg="gray.800" color="white" _hover={{ bg: "gray.700" }} _focus={{ bg: "gray.700", boxShadow: "outline" }} />

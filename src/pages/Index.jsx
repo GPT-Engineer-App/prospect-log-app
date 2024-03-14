@@ -3,6 +3,8 @@ import { Box, VStack, HStack, FormControl, FormLabel, Input, Button, Text, Spinn
 
 const Index = () => {
   const [prospectEmail, setProspectEmail] = useState("");
+  const [productInfoFile, setProductInfoFile] = useState("sasstr.pdf");
+  const [salesConversationsFile, setSalesConversationsFile] = useState("sasstr_sales_convs.pdf");
   const [logs, setLogs] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const toast = useToast();
@@ -40,6 +42,24 @@ const Index = () => {
               <FormControl id="prospectEmail">
                 <FormLabel color="white">Prospect Email</FormLabel>
                 <Input type="email" value={prospectEmail} onChange={(e) => setProspectEmail(e.target.value)} bg="gray.800" color="white" _hover={{ bg: "gray.700" }} _focus={{ bg: "gray.700", boxShadow: "outline" }} />
+              </FormControl>
+              <FormControl id="productInfoFile">
+                <FormLabel color="white">Product/Event Info File</FormLabel>
+                <Input type="file" onChange={(e) => setProductInfoFile(e.target.files[0]?.name)} bg="gray.800" color="white" _hover={{ bg: "gray.700" }} _focus={{ bg: "gray.700", boxShadow: "outline" }} />
+                {productInfoFile && (
+                  <Text color="white" mt={1}>
+                    {productInfoFile}
+                  </Text>
+                )}
+              </FormControl>
+              <FormControl id="salesConversationsFile">
+                <FormLabel color="white">Previous Sales Conversations PDF</FormLabel>
+                <Input type="file" onChange={(e) => setSalesConversationsFile(e.target.files[0]?.name)} bg="gray.800" color="white" _hover={{ bg: "gray.700" }} _focus={{ bg: "gray.700", boxShadow: "outline" }} />
+                {salesConversationsFile && (
+                  <Text color="white" mt={1}>
+                    {salesConversationsFile}
+                  </Text>
+                )}
               </FormControl>
               <Button type="submit" colorScheme="blue" isLoading={isLoading} loadingText="Researching">
                 Submit
